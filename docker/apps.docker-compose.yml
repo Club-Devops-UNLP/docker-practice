@@ -1,0 +1,19 @@
+version: "3.1"
+services:
+  infobae-api:
+    container_name: infobae-api
+    build:
+      context: ../apps/infobae-api
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+      
+  react-boilerplate:
+    container_name: react-boilerplate
+    build:
+      context: ../apps/React-App
+      dockerfile: Dockerfile
+    env_file:
+      - .env
+    ports:
+      - "3250:3250"
